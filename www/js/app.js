@@ -147,8 +147,18 @@ function AppViewModel() {
 			loadPage('advanced',null,self.setupAdvanced);
 		}
 		
+		self.upload = function() {
+			navigator.notification.confirm('Are you sure you want to upload these reports?',function(response) {
+					if(response === 1) {	
+						self.loadReports = function() { loadPage('reports'); }
+					}
+				}, 'Advanced Adjusting');
+			
+		}
+		
         self.setupAdvanced = function() {
             sigCapture = new SignatureCapture( "signature" );
+            witsigCapture = new SignatureCapture( "witness_signature" );
         }
         
 		self.back = function() {
