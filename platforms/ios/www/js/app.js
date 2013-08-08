@@ -49,10 +49,12 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto1 = function() {
+			console.log('HERE');
 			navigator.camera.getPicture(self.processPicture1,null,{quality:60,targetHeight:300,targetWidth:300});
 		}
 		
 		self.processPicture1 = function(data) {
+			console.log(data);
 			$('#photo1').attr('src',data);
 		}
 		
@@ -147,8 +149,18 @@ function AppViewModel() {
 			loadPage('advanced',null,self.setupAdvanced);
 		}
 		
+		self.upload = function() {
+			navigator.notification.confirm('Are you sure you want to upload these reports?',function(response) {
+					if(response === 1) {	
+						self.loadReports = function() { loadPage('reports'); }
+					}
+				}, 'Advanced Adjusting');
+			
+		}
+		
         self.setupAdvanced = function() {
             sigCapture = new SignatureCapture( "signature" );
+            witsigCapture = new SignatureCapture( "witness_signature" );
         }
         
 		self.back = function() {

@@ -11,10 +11,9 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
-    <access origin="*" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
-    <preference name="UIWebViewBounce" value="true" />
+    <preference name="UIWebViewBounce" value="false" />
     <preference name="TopActivityIndicator" value="gray" />
     <preference name="EnableLocation" value="false" />
     <preference name="EnableViewportScale" value="false" />
@@ -24,20 +23,9 @@
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="OpenAllWhitelistURLsInWebView" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
-    <preference name="phonegap-version" value="2.9.0" />
-    <preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="2.7.0" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
-    <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="7" />
-    <preference name="android-installLocation" value="auto" />
+    <preference name="fullscreen" value="false" />
+    <preference name="detect-data-types" value="false" />
 </widget>
