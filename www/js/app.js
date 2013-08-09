@@ -48,8 +48,14 @@ function AppViewModel() {
 			
 		}
 		
+		var quality = {
+			quality:60,
+			targetHeight:300,
+			targetWidth:300
+		};
+		
 		self.getPhoto1 = function() {
-			navigator.camera.getPicture(self.processPicture1,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture1,null,quality);
 		}
 		
 		self.processPicture1 = function(data) {
@@ -57,7 +63,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto2 = function() {
-			navigator.camera.getPicture(self.processPicture2,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture2,null,quality);
 		}
 		
 		self.processPicture2 = function(data) {
@@ -65,7 +71,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto3 = function() {
-			navigator.camera.getPicture(self.processPicture3,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture3,null,quality);
 		}
 		
 		self.processPicture3 = function(data) {
@@ -73,7 +79,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto4 = function() {
-			navigator.camera.getPicture(self.processPicture4,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture4,null,quality);
 		}
 		
 		self.processPicture4 = function(data) {
@@ -81,7 +87,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto5 = function() {
-			navigator.camera.getPicture(self.processPicture5,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture5,null,quality);
 		}
 		
 		self.processPicture5 = function(data) {
@@ -89,7 +95,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto6 = function() {
-			navigator.camera.getPicture(self.processPicture6,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture6,null,quality);
 		}
 		
 		self.processPicture6 = function(data) {
@@ -97,7 +103,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto7 = function() {
-			navigator.camera.getPicture(self.processPicture7,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture7,null,quality);
 		}
 		
 		self.processPicture7 = function(data) {
@@ -105,7 +111,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto8 = function() {
-			navigator.camera.getPicture(self.processPicture8,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture8,null,quality);
 		}
 		
 		self.processPicture8 = function(data) {
@@ -113,7 +119,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto9 = function() {
-			navigator.camera.getPicture(self.processPicture9,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture9,null,quality);
 		}
 		
 		self.processPicture9 = function(data) {
@@ -121,7 +127,7 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto10 = function() {
-			navigator.camera.getPicture(self.processPicture10,null,{quality:60,targetHeight:300,targetWidth:300});
+			navigator.camera.getPicture(self.processPicture10,null,quality);
 		}
 		
 		self.processPicture10 = function(data) {
@@ -131,6 +137,7 @@ function AppViewModel() {
 
 	//NAVIGATION
 		self.loadReports = function() { loadPage('reports'); }
+		self.loadPics = function() { loadPage('pictures'); }
 		self.loadReport = function(claim) {
 			self.open(claim);
 			loadPage('report'); 
@@ -171,6 +178,10 @@ function AppViewModel() {
 				self.open_claims.push(claim);
 				self.new_claims.remove(claim);
 			}
+		}
+		
+		self.test = function() {
+			alert('me');
 		}
 		
 	//CLAIMS
@@ -293,14 +304,14 @@ var request = function(url,callback,data,validation,loader,quiet) {
 						break;
 					default:
 						console.log(data);
-						navigator.notification.alert('There was an error:' + data.message,null,'GroupPost');
+						navigator.notification.alert('There was an error:' + data.message,null,'AdvAdj');
 						break;
 				}
 			}
 		},
 		complete: function(jqXHR, textStatus) {
 			if((textStatus != 'success')&&(!quiet)) {
-				navigator.notification.alert('There was a problem communicating with the server.',null,'GroupPost');
+				navigator.notification.alert('There was a problem communicating with the server.',null,'AdvAdj');
 			}
 			$('#loading').fadeOut();
 			$('#activity').fadeOut();
@@ -342,6 +353,10 @@ $(function() {
 	$('#menu_button').click(function() {
 		$('#app').toggleClass('open');
 		return false;
+	});
+	
+	$('#photo1_btn').click(function() {
+		alert('me');
 	});
 });
 	
