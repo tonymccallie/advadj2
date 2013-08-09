@@ -49,12 +49,10 @@ function AppViewModel() {
 		}
 		
 		self.getPhoto1 = function() {
-			console.log('HERE');
 			navigator.camera.getPicture(self.processPicture1,null,{quality:60,targetHeight:300,targetWidth:300});
 		}
 		
 		self.processPicture1 = function(data) {
-			console.log(data);
 			$('#photo1').attr('src',data);
 		}
 		
